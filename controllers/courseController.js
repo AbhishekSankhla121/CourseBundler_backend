@@ -60,7 +60,7 @@ export const getCourseLectures = catchAsyncError(async (req, res, next) => {
     await course.save();
     res.status(200).json({
         success: true,
-        letures: course.lectures,
+        lectures: course.lectures,
     })
 });
 
