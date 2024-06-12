@@ -11,13 +11,13 @@ export const contact = catchAsyncError(async (req, res, next) => {
     await sendEmail(to, subject, text);
     res.status(200).json({
         message: "Your message has been sent",
-        success: true,
+        success: true, 
     });
 });
 
 export const requestCourse = catchAsyncError(async (req, res, next) => {
     const { name, email, course } = req.body;
-    if (!name || !email || !message) return next(new ErrorHandler("all fileds are required!", 400));
+    if (!name || !email || !course) return next(new ErrorHandler("all fileds are required!", 400));
     const to = process.env.MY_MAIL;
     const subject = "Request for a course on course Bundler";
     const text = `i am ${name} and my email is ${email}. \n${course}`;
